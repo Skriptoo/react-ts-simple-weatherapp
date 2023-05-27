@@ -11,12 +11,12 @@ const SearchBarComponent = (props: {handleSearch: Function}) => {
 
     }
     const handleSearchingOnChange = (arg: string) =>{
-        if(arg !== '')
+        if(arg !== '' || arg === null)
         {
-            return fetch(`${apiOptions.url}${arg}&limit=10&min_population=50000`, apiOptions)
+            return fetch(`${apiOptions.url}${arg}&limit=5&min_population=50000`, apiOptions)
             .then(res => res.json())
             .then(json => setDataList(Object.keys(json).map((k, i) =>
-                <div key={i} className="bg-light"  onClick={() => props.handleSearch(json[i].name)}>
+                <div key={i} className="bg-light cursor-pointer justify-content-start align-items align-items-start w-1 h-25"  onClick={() => props.handleSearch(json[i].name)}>
                     <p className="font-weight-bold"> {json[i].name} - {json[i].country}</p>
                 </div>
             )))
@@ -32,11 +32,9 @@ const SearchBarComponent = (props: {handleSearch: Function}) => {
         </form>
         </div>
         
-   
-    
     return (
         <>
-            <div className="d-Block">
+            <div className="d-flex flex-column align-items-center justify-content-center">
                 <>
                     {searchForm}
                     {dataList}
