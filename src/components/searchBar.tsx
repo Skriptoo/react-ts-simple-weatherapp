@@ -28,7 +28,7 @@ const SearchBarComponent = (props: {handleSearch: Function}) => {
     const searchForm =  <div className="border-dark d-block m-20">
         <form onSubmit={handleSubmitEvent}>
             <input type="text" value={searchVal} onChange={(e) => setSearchVal(e.target.value)} onInput={() => handleSearchingOnChange(searchVal)} />
-            <button type="submit" className="btn btn-outline-primary">Szukaj!</button>
+            <button type="submit" className="btn btn-outline-primary">Search!</button>
         </form>
         </div>
         

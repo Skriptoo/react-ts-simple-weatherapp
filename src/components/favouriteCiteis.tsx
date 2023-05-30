@@ -13,7 +13,7 @@ const FavouriteCities = (props: {
         
     return (
     <div className="border border p-2 border rounded shadow d-flex flex-column align-items-center">
-        <h3>Ulubione miasta: </h3>
+        <h3> Favourite cities: </h3>
         <div className="w-100">
             {mapCitiesToList}
         </div>
